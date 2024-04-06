@@ -42,6 +42,8 @@ return Application::configure(basePath: dirname(__DIR__))
 
     // web-es Middleware csoporthoz való hozzáadás (append) így:
     $middleware->web([MyFirstMiddleware::class, MySecondMiddleware::class]);
+
+    $middleware->redirectGuestsTo('/login');
   })
   ->withExceptions(function (Exceptions $exceptions) {
     //
